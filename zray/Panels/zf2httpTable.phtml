@@ -40,6 +40,16 @@ $tableParams = array(
                     }
                 },
                 {
+                    "label": "time",
+                    "propertyName": "duration",
+                    "sortable": true,
+                    "width": '5%',
+                    "getHtml": function(value) {
+                        value = Math.ceil(value / 1000);
+                        return value + 'ms';
+                    }
+                },
+                {
                     "label": "URL",
                     "propertyName": "url",
                     "sortable": true,
@@ -52,7 +62,7 @@ $tableParams = array(
                     "label": "Response",
                     "propertyName": "responseRawBody",
                     "sortable": true,
-                    "width": '55%',
+                    "width": '50%',
                     "getHtml": function(value) {
                         return   zendDevBar.shorten(value, 250) ;
                     }

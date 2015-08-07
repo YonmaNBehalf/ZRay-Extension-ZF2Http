@@ -47,6 +47,7 @@ class BehalfZF2api {
 			'params' => ($params),
 			'responseRawBody' => $body,
             'responseCode' => $statusCode,
+            'duration' => $context['durationInclusive']
         );
 	}
 }
