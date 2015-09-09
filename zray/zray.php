@@ -29,7 +29,7 @@ class BehalfZF2api {
 			$body = $result->getBody();
             $statusCode = $result->getStatusCode();
 		}
-		
+
         $client = $context['this']; /* @var $client \Zend\Http\Client */
         
 		$params = array();
@@ -39,13 +39,15 @@ class BehalfZF2api {
 			$params = json_encode($client->getRequest()->getQuery()->toArray());
 		}
 
+        $jsonBody = json_decode($body);
 
-		$storage['RequestsZf2'][] = array(
+        $storage['RequestsZf2'][] = array(
 			'method' => $client->getRequest()->getMethod(),
 			'url' => $client->getRequest()->getUri()->toString(),
 			'headers' => json_encode($client->getRequest()->getHeaders()->toArray()),
 			'params' => ($params),
 			'responseRawBody' => $body,
+            'responsePayload' => $jsonBody ? $jsonBody : $body,
             'responseCode' => $statusCode,
             'duration' => $context['durationInclusive']
         );

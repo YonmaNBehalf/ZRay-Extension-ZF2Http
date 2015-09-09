@@ -134,7 +134,6 @@ $tableParams = array(
             storage.addData(backtrace);
             // create main table
             var tableContainer = displayFullData ? $zendDevBar('.zdb-zf2http-requests-backtrace-full-data') : $zendDevBar('.zsb-overlay-backtrace-table-wrapper-zf2http-requests');
-            console.log(tableContainer, displayFullData);
             return zray.createTreeTable(storage, tableContainer);
         }
     })();
