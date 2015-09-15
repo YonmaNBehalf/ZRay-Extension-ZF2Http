@@ -57,8 +57,7 @@ class BehalfZF2api {
 
 $zre = new ZRayExtension('zf2http');
 
-$zre->setEnabled();
-
 $behalfZf2Api = new BehalfZF2api($zre);
 
+$zre->setEnabledAfter('Zend\Http\Client::send');
 $zre->traceFunction('Zend\Http\Client::send', function($context, &$storage){}, array($behalfZf2Api, 'collect'));
