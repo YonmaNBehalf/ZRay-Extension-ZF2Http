@@ -8,21 +8,21 @@ class Module extends \ZRay\ZRayModule {
         return array(
             // The name defined in ZRayExtension
             'extension' => array(
-                'name' => 'zf2http',
+                'name' => 'Requests',
             ),
             // Prevent those default panels from being displayed
             'defaultPanels' => array(
-                'RequestsZf2' => false,
+                'RequestsZf2' => true,
             ),
             // configure all custom panels
             'panels' => array(
-                'zf2httpTable' => array(
-                    'display'           => true,
-                    'menuTitle'         => 'ZF2 Requests',
-                    'panelTitle'        => 'ZF2 Requests',
-                    'searchId'          => 'zf2http-table-search',
-                    'pagerId'           => 'zf2http-table-pager',
-                )
+//                'zf2httpTable' => array(
+//                    'display'           => true,
+//                    'menuTitle'         => 'ZF2 Requests',
+//                    'panelTitle'        => 'ZF2 Requests',
+//                    'searchId'          => 'zf2http-table-search',
+//                    'pagerId'           => 'zf2http-table-pager',
+//                )
             )
         );
     }

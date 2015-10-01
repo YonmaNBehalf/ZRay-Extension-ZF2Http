@@ -18,7 +18,7 @@ $tableParams = array(
     (function() {
         $zendDevBar(function() {
             var storage = zendDevBar.getStorage('zf2httpRequestsTable');
-            zray.registerDataHandler('zf2http', 'RequestsZf2', function(extensionData) {
+            zray.registerDataHandler('Requests', 'RequestsZf2', function(extensionData) {
                 storage.setData(extensionData);
             });
             // create main table
@@ -94,7 +94,7 @@ $tableParams = array(
         });
 
         function showBacktrace(data) {
-            var overlay = zendDevBar.getModuleOverlay('zrayExtension:zf2http/zf2httpTable');
+            var overlay = zendDevBar.getModuleOverlay('zrayExtension:Requests/zf2httpTable');
             var spinner = $zendDevBar('<div class="zdb-overlay-spinner" style="height: ' + (overlay.outerHeight() - 30) + 'px; line-height: ' + (overlay.outerHeight() - 30) + 'px"><div><div class="zdb-spinner-img"></div>Loading...</div></div>');
             overlay.append(spinner);
             spinner.remove();
@@ -109,10 +109,10 @@ $tableParams = array(
             overlay.append('\
                 <div class="zdb-row zdb-toolbar-detail-header">\
                     <div class="zdb-col-4">\
-                        <h1><a href="javascript:void(0);" onclick="zendDevBar.removeModuleOverlay(\'zrayExtension:zf2http/zf2httpTable\')">' + requestHeadline + '</a> <span style="font-size: 14px;color: #006F9D;">&raquo ' + shortFileName + '</span></h1>\
+                        <h1><a href="javascript:void(0);" onclick="zendDevBar.removeModuleOverlay(\'zrayExtension:Requests/zf2httpTable\')">' + requestHeadline + '</a> <span style="font-size: 14px;color: #006F9D;">&raquo ' + shortFileName + '</span></h1>\
                         <div class="zdb-pull-right">\
                             <ul class="zdb-toolbar-items zdb-horizontal">\
-                                <li><a class="zdb-backtrace-back" href="javascript:void(0);" onclick="zendDevBar.removeModuleOverlay(\'zrayExtension:zf2http/zf2httpTable\')">back</a></li>\
+                                <li><a class="zdb-backtrace-back" href="javascript:void(0);" onclick="zendDevBar.removeModuleOverlay(\'zrayExtension:Requests/zf2httpTable\')">back</a></li>\
                             </ul>\
                         </div>\
                     </div>\

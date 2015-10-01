@@ -55,7 +55,7 @@ class BehalfZF2api {
 }
 
 
-$zre = new ZRayExtension('zf2http');
+$zre = new ZRayExtension('Requests');
 
 $behalfZf2Api = new BehalfZF2api($zre);
 
